@@ -1,0 +1,25 @@
+```c++
+template <int N>
+struct Fibonacci {
+static constexpr int value = Fibonacci<N-1>::value + Fibonacci<N-2>::value;
+};
+
+template <>
+struct Fibonacci<1> {
+static constexpr int value = 1;
+};
+
+template <>
+struct Fibonacci<0> {
+static constexpr int value = 0;
+};
+
+int main() {
+std::cout << Fibonacci<20>::value;
+}
+```
+
+#### ==static_assert==
+- Проверяет выполнено ли условие в compile time
+
+

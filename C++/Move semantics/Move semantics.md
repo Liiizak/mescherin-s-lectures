@@ -1,0 +1,6 @@
+[[Idea of move-semantics]]
+[[Std move]]
+[[Lvalue and rvalue]]
+[[Rvalue reference]]
+[[Forwarding references]]
+[[Expired value, RVO and copy elision]]
