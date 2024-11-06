@@ -3,4 +3,4 @@
 [[Lvalue and rvalue]]
 [[Rvalue reference]]
 [[Forwarding references]]
-[[Expired value, RVO and copy elision]]
+[[Expired values, RVO and copy elision]]

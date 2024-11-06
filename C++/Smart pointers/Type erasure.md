@@ -44,7 +44,7 @@ class any {
 
 template <typename T>
 T any_cast(any& a) {
-  auto* p = dynamic_cast<any::Derived<std::remove_reference<T>>*>(a.ptr);
+  auto* p = dynamic_cast<any::Derived<std::remove_reference_t<T>>*>(a.ptr);
   if (!p) {
     throw std::bad_any_cast;
   }

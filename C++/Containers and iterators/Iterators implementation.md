@@ -1,5 +1,5 @@
 ```c++
-typename <bool IsConst>
+template <bool IsConst>
 class Iterator {
  public:
   using pointer_type = std::conditional_t<IsConst, const T*, T*>;
@@ -31,7 +31,7 @@ class Iterator {
     return copy;
   }
 };
-using iterator = Iterator<лекторий вшпиfalse>;
+using iterator = Iterator<false>;
 using const_iterator = Iterator<true>;
 using reverse_iterator = std::reverse_iterator<iterator>;
 using const_reverse_iteratot = std::reverse_iterator<const_iterator>;

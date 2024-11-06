@@ -6,10 +6,11 @@ int main() {
   int x = 0;
   decltype(x) y = x;
   decltype(x)&& z = x; // CE - rvalue ref
-  decltype(++x) u = x; // не вычисляет выражение под собой
+  decltype(++x) u = x; // не вычисляет выражение под собой, берет return type
   decltype(throw 1)* p = &x; // void*.......
   const decltype(throw 1)* p = &x; // const void*
   const decltype(&x) l = &x; //o int* const
+  decltype((x)) k = x; // k - ссылка на x
 }
 ```
 
@@ -22,7 +23,7 @@ int main() {
 ## Decltype as return type
 
 ```c++
-// 1 не сработает, возвращаемый тип не ссылка
+// 1 не сработает, если возвращаемый тип не ссылка
 template <typename Container>
 auto& getElement(Container& cont, size_t index) {
   return cont[index];

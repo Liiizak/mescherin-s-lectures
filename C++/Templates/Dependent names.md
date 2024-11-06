@@ -26,7 +26,6 @@ typename S<T>::A* x; // declaration
 ```
 
 
-
 ```c++
 template <typename T>
   struct S {

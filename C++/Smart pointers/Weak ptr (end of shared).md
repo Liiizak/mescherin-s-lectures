@@ -63,7 +63,13 @@ class shared_ptr {
 
 ```
 
+Тоооо есть
+1. shared_ptr(T* ptr, Deleter del) - хотим создать count через new, но удалить объект по-особенному
+2. shared_ptr(T* ptr, Alloc alloc) - count создаем по-особому, в деструкторе зовем delete
+3. shared_ptr(T* ptr, Alloc alloc, Deleter del) - все по-особому
+4. создание через make_shared - не нужен нестандартный Deleter
+
 Деструктор работает следующим образом:
-- если shared_count == 0 и weak_count == 0 - вызывается деструктор control block **??**
+- если shared_count == 0 и weak_count == 0 - вызывается деструктор control block при помощи лежащего в нем аллокатора
 - shared_count == 0 и weak_count != 0 - вызывается деструктор T
 - shared_count != 0 - shared_count -= 1
